@@ -2,10 +2,13 @@
 #include <iostream>
 using namespace std;
 
+int MyString::quantity = 0;
+
 MyString::MyString()
 {
 	length = 80;
 	str = new char[length];
+	quantity++;
 }
 
 MyString::MyString(const char* obj)
@@ -13,6 +16,7 @@ MyString::MyString(const char* obj)
 	length = strlen(obj);
 	str = new char[length + 1];
 	strcpy_s(str, length + 1, obj);
+	quantity++;
 }
 
 MyString::MyString(const MyString& obj)
@@ -20,6 +24,7 @@ MyString::MyString(const MyString& obj)
 	length = obj.length;
 	str = new char[length + 1];
 	strcpy_s(str, length + 1, obj.str);
+	quantity++;
 }
 
 void MyString::Print()
@@ -129,4 +134,9 @@ int MyString::MyStrCmp(MyString& b)
 MyString::~MyString()
 {
 	delete[] str;
+}
+
+void MyString::QuantityOfObjects()
+{
+	cout << "Quantity of object with class MyString: " << quantity << endl;
 }
