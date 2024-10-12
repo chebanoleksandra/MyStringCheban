@@ -24,5 +24,8 @@ int main()
 	obj3.MyDelChr('o');
 	obj3.Print();
 	cout << obj3.MyStrStr("o") << endl;
+
+	MyString obj4 = obj1;
+	obj4.Print();
 	MyString::QuantityOfObjects();
 }
