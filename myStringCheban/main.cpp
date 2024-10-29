@@ -28,4 +28,6 @@ int main()
 	MyString obj4 = obj1;
 	obj4.Print();
 	MyString::QuantityOfObjects();
+
+	cout << obj4[2] << endl;
 }

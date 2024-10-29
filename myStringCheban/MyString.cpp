@@ -140,3 +140,10 @@ void MyString::QuantityOfObjects()
 {
 	cout << "Quantity of object with class MyString: " << quantity << endl;
 }
+
+char MyString::operator[](int index)
+{
+	if (index >= 0 && index < length)
+		return str[index];
+	return -1;
+}
