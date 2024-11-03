@@ -22,5 +22,7 @@ public:
 	int MyStrCmp(MyString& b);
 	static void QuantityOfObjects();
 	char operator[](int index);
+	char* GetStr();
+	void SetStr(const char* s);
 	~MyString();
 };

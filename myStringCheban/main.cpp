@@ -2,6 +2,20 @@
 #include "MyString.h"
 using namespace std;
 
+ostream& operator<<(ostream& os, MyString& obj)
+{
+	os << obj.GetStr();
+	return os;
+}
+
+istream& operator>>(istream& is, MyString& obj)
+{
+	char buff[80];
+	is >> buff;
+	obj.SetStr(buff);
+	return is;
+}
+
 int main()
 {
 	MyString obj1("Hello");
@@ -30,4 +44,9 @@ int main()
 	MyString::QuantityOfObjects();
 
 	cout << obj4[2] << endl;
+
+	MyString obj5;
+	cout << "Input string: ";
+	cin >> obj5;
+	cout << obj5;
 }
